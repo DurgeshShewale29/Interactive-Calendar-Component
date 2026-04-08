@@ -4,7 +4,7 @@ Frontend engineering challenge submission built with Next.js + React + Tailwind 
 
 ## Objective
 
-Recreate a wall-calendar inspired UI from a static reference and turn it into a polished, interactive, and responsive web component.
+Create a wall-calendar inspired UI from a static reference and turn it into a polished, interactive, and responsive web component.
 
 ## Implemented Features
 
