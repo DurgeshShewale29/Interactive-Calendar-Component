@@ -24,3 +24,85 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pagePeelAway {
+  from {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    filter: brightness(1) blur(0);
+  }
+  45% {
+    opacity: 0.98;
+    transform: translate(-6%, -10%) scale(0.997) rotate(-0.6deg);
+    filter: brightness(0.96) blur(0);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-26%, -40%) scale(0.99) rotate(-1.4deg);
+    filter: brightness(0.9) blur(1px);
+  }
+}
+
+@keyframes underReveal {
+  from {
+    opacity: 0.78;
+    transform: translateY(14px) scale(0.995);
+    filter: brightness(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: brightness(1);
+  }
+}
+
+@keyframes dayPop {
+  0% {
+    transform: scale(0.92);
+  }
+  60% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.cal-card-enter {
+  animation: cardEnter 320ms ease-out;
+}
+
+.cal-perspective {
+  perspective: 1450px;
+}
+
+.cal-page-under {
+  opacity: 0.95;
+  filter: brightness(0.96);
+}
+
+.cal-page-under-reveal {
+  animation: underReveal 420ms cubic-bezier(0.2, 0.72, 0.22, 1);
+}
+
+.cal-page-peel-out {
+  animation: pagePeelAway 420ms cubic-bezier(0.2, 0.76, 0.24, 1) forwards;
+  transform-origin: right bottom;
+  box-shadow: 0 18px 26px rgba(0, 0, 0, 0.18);
+  will-change: transform, opacity, filter;
+}
+
+.cal-day-pop {
+  animation: dayPop 180ms ease-out;
+}
